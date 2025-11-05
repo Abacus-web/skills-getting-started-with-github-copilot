@@ -184,6 +184,27 @@ footer {
   font-weight: bold;
 }
 
+/* Delete button (small X) shown next to each participant */
+.delete-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #b00020;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background: rgba(176, 0, 32, 0.08);
+}
+
+.participant-label {
+  word-break: break-all;
+}
+
 .no-participants {
   color: #666;
   font-style: italic;
