@@ -142,3 +142,50 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+.participants {
+  margin-top: 12px;
+}
+
+.participants-list {
+  list-style: none;
+  padding: 8px;
+  margin-top: 8px;
+  background: #f4f6ff;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.12s;
+}
+
+.participant-item:hover {
+  background: rgba(26, 35, 126, 0.04);
+}
+
+.participant-item .avatar {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1a237e;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.no-participants {
+  color: #666;
+  font-style: italic;
+  padding: 6px 8px;
+}

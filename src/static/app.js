@@ -20,11 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
+        // Render participants as a bulleted list (or a friendly fallback)
+        const participantsHtml = details.participants && details.participants.length
+          ? `<ul class="participants-list">
+               ${details.participants.map(p => {
+                 // show a short label (use email or name). Keep it safe for HTML.
+                 const label = String(p);
+                 return `<li class="participant-item"><span class="avatar">${label.charAt(0).toUpperCase()}</span>${label}</li>`;
+               }).join("")}
+             </ul>`
+          : `<ul class="participants-list"><li class="no-participants">No participants yet</li></ul>`;
+
         activityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <div class="participants">
+            <strong>Participants:</strong>
+            ${participantsHtml}
+          </div>
         `;
 
         activitiesList.appendChild(activityCard);
